@@ -22,4 +22,9 @@ const expenses = [{
     createdAt: moment('2019-01-10').valueOf()
 }]
 
-export default expenses
+const expensesWithIds = expenses.map((expense, index) => ({
+    id: index + 1,
+    ...expense
+}))
+
+export { expenses as default, expensesWithIds }
