@@ -55,7 +55,7 @@ describe('filter reducers', () => {
             startDate
         })
 
-        expect(action.startDate).toBe(startDate)
+        expect(action.startDate).toEqual(startDate)
     })
 
     test('should set endDate filter', () => {
@@ -65,6 +65,6 @@ describe('filter reducers', () => {
             endDate
         })
 
-        expect(action.endDate).toBe(endDate)
+        expect(action.endDate).toEqual(endDate)
     })
 })

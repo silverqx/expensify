@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-const expensesSeed = [{
+const expenses = [{
     description: 'Water Bill',
     note: 'Water Bill Note',
     amount: 166.60,
@@ -22,4 +22,4 @@ const expensesSeed = [{
     createdAt: moment('2019-01-10').valueOf()
 }]
 
-export default expensesSeed
+export default expenses

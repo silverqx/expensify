@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-import expensesSeed from '../../db/seed/expenses'
+import expenses from '../fixtures/expenses'
 import getVisibleExpenses from '../../selectors/expenses'
 
 describe('getVisibleExpenses selector', () => {
@@ -11,9 +11,9 @@ describe('getVisibleExpenses selector', () => {
             endDate: null,
             sortBy: 'date'
         }
-        const visibleExpenses = getVisibleExpenses(expensesSeed, filters)
+        const visibleExpenses = getVisibleExpenses(expenses, filters)
 
-        expect(visibleExpenses).toEqual([ expensesSeed[1], expensesSeed[0] ])
+        expect(visibleExpenses).toEqual([ expenses[1], expenses[0] ])
     })
 
     test('should filter by startDate value', () => {
@@ -23,9 +23,9 @@ describe('getVisibleExpenses selector', () => {
             endDate: null,
             sortBy: 'date'
         }
-        const visibleExpenses = getVisibleExpenses(expensesSeed, filters)
+        const visibleExpenses = getVisibleExpenses(expenses, filters)
 
-        expect(visibleExpenses).toEqual([ expensesSeed[2], expensesSeed[0] ])
+        expect(visibleExpenses).toEqual([ expenses[2], expenses[0] ])
     })
 
     test('should filter by endDate value', () => {
@@ -35,9 +35,9 @@ describe('getVisibleExpenses selector', () => {
             endDate: moment('2019-04-08'),
             sortBy: 'date'
         }
-        const visibleExpenses = getVisibleExpenses(expensesSeed, filters)
+        const visibleExpenses = getVisibleExpenses(expenses, filters)
 
-        expect(visibleExpenses).toEqual([ expensesSeed[3], expensesSeed[1] ])
+        expect(visibleExpenses).toEqual([ expenses[3], expenses[1] ])
     })
 
     test('should sort by date', () => {
@@ -47,13 +47,13 @@ describe('getVisibleExpenses selector', () => {
             endDate: null,
             sortBy: 'date'
         }
-        const visibleExpenses = getVisibleExpenses(expensesSeed, filters)
+        const visibleExpenses = getVisibleExpenses(expenses, filters)
 
         expect(visibleExpenses).toEqual([
-            expensesSeed[3],
-            expensesSeed[1],
-            expensesSeed[2],
-            expensesSeed[0]
+            expenses[3],
+            expenses[1],
+            expenses[2],
+            expenses[0]
         ])
     })
 
@@ -64,13 +64,13 @@ describe('getVisibleExpenses selector', () => {
             endDate: null,
             sortBy: 'amount'
         }
-        const visibleExpenses = getVisibleExpenses(expensesSeed, filters)
+        const visibleExpenses = getVisibleExpenses(expenses, filters)
 
         expect(visibleExpenses).toEqual([
-            expensesSeed[1],
-            expensesSeed[3],
-            expensesSeed[2],
-            expensesSeed[0]
+            expenses[1],
+            expenses[3],
+            expenses[2],
+            expenses[0]
         ])
     })
 })
