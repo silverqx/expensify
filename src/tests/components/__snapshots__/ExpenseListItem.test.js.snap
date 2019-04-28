@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpenseListItem component should render ExpenseListItem with expense 1`] = `
+<div>
+  <Link
+    to="/edit/1"
+  >
+    Water Bill
+  </Link>
+   - 
+  166.6
+   - 
+  April 19, 2019
+  <button
+    onClick={[Function]}
+  >
+    Edit
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</div>
+`;
