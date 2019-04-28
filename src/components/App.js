@@ -12,6 +12,8 @@ import ModalOption from './ModalOption'
 
 import { clearInputValue } from '../utils/utils'
 
+import 'react-dates/lib/css/_datepicker.css'
+
 // Make sure to bind modal to your appElement
 // (http://reactcommunity.org/react-modal/accessibility/)
 ReactModal.setAppElement('#app')

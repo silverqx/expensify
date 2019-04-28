@@ -1,5 +1,6 @@
 import React from 'react'
 
+// TODO write test for <FormErrors /> silver
 const FormErrors = ({ errors }) => (
     <div>
         {
