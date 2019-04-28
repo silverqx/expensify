@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import ReactModal from 'react-modal'
 
 import ExpenseDashboardPage from './ExpenseDashboardPage'
 import AddExpensePage from './AddExpensePage'
 import EditExpensePage from './EditExpensePage'
+import Header from './Header';
 import NotFoundPage from './NotFoundPage'
 
 import ModalOption from './ModalOption'
@@ -59,19 +60,7 @@ export default class ExpensifyApp extends Component {
         return (
             <Router>
                 <div className="container">
-                    <nav>
-                        <ul className="navigation">
-                            <li className="navigation__item">
-                                <NavLink to="/">Dashboard</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/create">Add Expense</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/edit/12">Edit Expense</NavLink>
-                            </li>
-                        </ul>
-                    </nav>
+                    <Header />
                     <Switch>
                         <Route path="/" exact component={ExpenseDashboardPage} />
                         <Route path="/create" component={AddExpensePage} />

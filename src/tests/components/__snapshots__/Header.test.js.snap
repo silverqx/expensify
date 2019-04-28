@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render Header correctly 1`] = `
+<nav>
+  <ul
+    className="navigation"
+  >
+    <li
+      className="navigation__item"
+    >
+      <NavLink
+        to="/"
+      >
+        Dashboard
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        to="/create"
+      >
+        Add Expense
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        to="/edit/12"
+      >
+        Edit Expense
+      </NavLink>
+    </li>
+  </ul>
+</nav>
+`;
