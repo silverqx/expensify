@@ -1,24 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import ExpenseForm from './ExpenseForm'
 
 import { editExpense } from '../actions/expenses'
 
-const EditExpensePage = ({ dispatch, history, match, expense }) => (
-    <div>
-        <h1>Edit Expense</h1>
-        <ExpenseForm
-            expense={expense}
-            onSubmit={updatedExpense => {
-                dispatch(editExpense(match.params.id, updatedExpense))
-                history.push('/')
-            }}
-        />
-    </div>
-)
+export class EditExpensePage extends Component {
+    onSubmit = (updatedExpense) => {
+        this.props.editExpense(
+            this.props.match.params.id,
+            updatedExpense
+        )
+        this.props.history.push('/')
+    }
 
-// FIXME really bad solution, should be done in router? silver
+    render() {
+        return (
+            <div>
+                <h1>Edit Expense</h1>
+                <ExpenseForm
+                    expense={this.props.expense}
+                    onSubmit={this.onSubmit}
+                />
+            </div>
+        )
+    }
+}
+
+// FIXME really bad solution, should be done in router? And how to test this? silver
 const findExpense = (state, { history, match }) => {
     const expense = state.expenses.find(
         expense => expense.id === match.params.id
@@ -34,4 +43,13 @@ const mapStateToProps = (state, props) => ({
     expense: findExpense(state, props)
 })
 
-export default connect(mapStateToProps)(EditExpensePage)
+const mapDispatchToProps = (dispatch) => ({
+    editExpense: (id, updatedExpense) => dispatch(
+        editExpense(id, updatedExpense)
+    )
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(EditExpensePage)

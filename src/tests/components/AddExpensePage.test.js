@@ -21,7 +21,7 @@ describe('AddExpensePage component', () => {
         expect(wrapper).toMatchSnapshot()
     })
 
-    test('should handle onSubmit', () => {
+    test('should handle addExpense on form onSubmit', () => {
         wrapper.find('ExpenseForm').prop('onSubmit')(expenses[0])
 
         expect(addExpense).toHaveBeenCalledTimes(1)
