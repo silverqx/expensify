@@ -5,24 +5,24 @@ import { DateRangePicker } from 'react-dates'
 import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from '../actions/filters'
 
 // TODO clear input on esc, use hoc https://github.com/amytych/react-escape-outside/blob/master/index.js
-class ExpenseListFilters extends Component {
+export class ExpenseListFilters extends Component {
     state = {
         datepickerFocused: null
     }
 
     onDatesChange = ({ startDate, endDate }) => {
-        this.props.dispatch(setStartDate(startDate))
-        this.props.dispatch(setEndDate(endDate))
+        this.props.setStartDate(startDate)
+        this.props.setEndDate(endDate)
     }
 
     getSortFilter = (value) => {
         const mapValueToFilter = {
-            date: sortByDate,
-            amount: sortByAmount
+            date: 'sortByDate',
+            amount: 'sortByAmount'
         }
         const sortFilter = mapValueToFilter[value]
 
-        return sortFilter()
+        return this.props[sortFilter]()
     }
 
     render() {
@@ -32,11 +32,11 @@ class ExpenseListFilters extends Component {
                     autoFocus
                     type="text"
                     value={this.props.filters.text}
-                    onChange={e => this.props.dispatch(setTextFilter(e.target.value))}
+                    onChange={e => this.props.setTextFilter(e.target.value)}
                 />
                 <select
                     value={this.props.filters.sortBy}
-                    onChange={e => this.props.dispatch(this.getSortFilter(e.target.value))}
+                    onChange={e => this.getSortFilter(e.target.value)}
                 >
                     <option value="date">Date</option>
                     <option value="amount">Amount</option>
@@ -66,4 +66,15 @@ const mapStateToProps = ({ filters }) => ({
     filters
 })
 
-export default connect(mapStateToProps)(ExpenseListFilters)
+const mapDispatchToProps = (dispatch) => ({
+    setTextFilter: text => dispatch(setTextFilter(text)),
+    setStartDate: startDate => dispatch(setStartDate(startDate)),
+    setEndDate: endDate => dispatch(setEndDate(endDate)),
+    sortByDate: () => dispatch(sortByDate()),
+    sortByAmount: () => dispatch(sortByAmount())
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ExpenseListFilters)
