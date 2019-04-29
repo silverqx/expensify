@@ -124,4 +124,20 @@ describe('ExpenseForm component', () => {
 
         expect(wrapper.state().datepickerFocused).toBe(true)
     })
+
+    test('should show Edit Expense as button value on edit', () => {
+        const wrapper = shallow(<ExpenseForm expense={expenses[1]} />)
+
+        const value = wrapper.find('input[type="submit"]').prop('value')
+
+        expect(value).toBe('Edit Expense')
+    })
+
+    test('should show Add Expense as button value on add', () => {
+        const wrapper = shallow(<ExpenseForm />)
+
+        const value = wrapper.find('input[type="submit"]').prop('value')
+
+        expect(value).toBe('Add Expense')
+    })
 })
