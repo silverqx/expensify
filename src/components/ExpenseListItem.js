@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import { removeExpense } from '../actions/expenses'
 
@@ -22,4 +22,4 @@ export const ExpenseListItem = ({ dispatch, history, id, description, note, amou
     </div>
 )
 
-export default connect()(ExpenseListItem)
+export default withRouter(connect()(ExpenseListItem))
