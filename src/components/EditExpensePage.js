@@ -8,7 +8,7 @@ import { editExpense } from '../actions/expenses'
 export class EditExpensePage extends Component {
     onSubmit = (updatedExpense) => {
         this.props.editExpense(
-            this.props.match.params.id,
+            this.props.expense.id,
             updatedExpense
         )
         this.props.history.push('/')

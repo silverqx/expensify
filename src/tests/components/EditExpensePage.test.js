@@ -3,26 +3,22 @@ import { shallow } from 'enzyme'
 
 import { EditExpensePage } from '../../components/EditExpensePage';
 
-import expenses from '../fixtures/expenses'
+import { expensesWithIds as expenses } from '../fixtures/expenses'
 
 describe('EditExpensePage component', () => {
-    let editExpense, history, wrapper, match
+    let editExpense, history, wrapper
 
     beforeEach(() => {
         editExpense = jest.fn()
         history = { push: jest.fn() }
-        match = {
-            params: {
-                id: expenses[0].id
-            }
-        }
 
-        wrapper = shallow(<EditExpensePage
-            expense={expenses[0]}
-            editExpense={editExpense}
-            history={history}
-            match={match}
-        />)
+        wrapper = shallow(
+            <EditExpensePage
+                expense={expenses[0]}
+                editExpense={editExpense}
+                history={history}
+            />
+        )
     })
 
     test('should render EditExpensePage correctly', () => {
@@ -40,7 +36,7 @@ describe('EditExpensePage component', () => {
 
         expect(editExpense).toHaveBeenCalledTimes(1)
         expect(editExpense).toHaveBeenCalledWith(
-            match.params.id,
+            expenses[0].id,
             updatedExpense
         )
 
