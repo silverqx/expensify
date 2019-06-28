@@ -1,5 +1,8 @@
 .cache/
+.crystal/
 .idea/
+.vscode/
 coverage/
 node_modules/
 public/dist/
+
