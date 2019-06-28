@@ -13,7 +13,6 @@ import expenses from './tests/fixtures/expenses'
 import 'normalize.css/normalize.css'
 import './styles/main.scss'
 
-
 const store = configureStore()
 
 store.subscribe(() => {
