@@ -33,11 +33,11 @@ const configFactory = (env = {}) => {
             // path: paths.appBuild,
             path: undefined,
             pathinfo: true,
-            filename: 'dist/js/bundle.js',
             publicPath: '/',
+            filename: 'dist/js/bundle.js',
+            chunkFilename: 'dist/js/[name].chunk.js',
             // TODO remove this when upgrading to webpack 5 silver
             futureEmitAssets: true,
-            chunkFilename: 'dist/js/[name].chunk.js',
             // Point sourcemap entries to original disk location (format as URL on Windows)
             devtoolModuleFilenameTemplate: info => {
                 path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')
@@ -163,6 +163,8 @@ const configFactory = (env = {}) => {
                                 {
                                     loader: require.resolve('css-loader'),
                                     options: {
+                                        // Increase to 2 when postcss-loader is active
+                                        importLoaders: 1,
                                         sourceMap: true
                                     }
                                 },
