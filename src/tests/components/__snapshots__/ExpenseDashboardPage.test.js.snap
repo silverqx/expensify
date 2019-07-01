@@ -8,7 +8,7 @@ exports[`ExpenseDashboardPage component should render ExpenseDashboardPage corre
   <h3>
     Expense List
   </h3>
-  <ConnectFunction />
-  <ConnectFunction />
+  <Connect(ExpenseListFilters) />
+  <Connect(ExpenseList) />
 </div>
 `;

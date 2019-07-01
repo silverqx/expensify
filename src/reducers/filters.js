@@ -5,8 +5,8 @@ import * as types from '../constants/filterActionTypes'
 const filtersReducerInitialState = {
     text: '',
     sortBy: 'date',
-    startDate: moment().startOf('month'),
-    endDate: moment().endOf('month')
+    startDate: null,
+    endDate: null
 }
 
 const filtersReducer = (state = filtersReducerInitialState, action) => {

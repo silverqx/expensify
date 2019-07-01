@@ -10,8 +10,8 @@ describe('filter reducers', () => {
         expect(action).toEqual({
             text: '',
             sortBy: 'date',
-            startDate: moment().startOf('month'),
-            endDate: moment().endOf('month')
+            startDate: null,
+            endDate: null
         })
     })
 
