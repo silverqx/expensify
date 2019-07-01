@@ -22,14 +22,14 @@ process.env.BABEL_ENV = 'development'
 process.env.NODE_ENV = 'development'
 
 process.on('unhandledRejection', err => {
-    console.log(chalk.red('Unhandled Rejection\n\n'))
-    console.log('Reason:', err)
+    console.log(chalk.red('\nUnhandled Rejection\n'))
+    console.log('Reason:')
+    console.error(err)
 })
 
 // Main Function
 startDevServer()
 
-// const startDevServer = async () => {
 async function startDevServer() {
     // create dev server config
     const includeDashboard = argv.dashboard
