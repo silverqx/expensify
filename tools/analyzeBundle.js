@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-import configFactory from '../webpack.config.dev.babel'
+import configFactory from '../webpack.config.prod.babel'
 
 process.env.NODE_ENV = 'production'
 
