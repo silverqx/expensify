@@ -22,7 +22,7 @@ exports[`ExpenseForm component should call onSubmit prop for valid form submissi
       <input
         onChange={[Function]}
         placeholder="Amount..."
-        step={0.5}
+        step={0.01}
         type="number"
         value="5.2"
       />
@@ -159,7 +159,7 @@ exports[`ExpenseForm component should not set amount on invalid input 1`] = `
       <input
         onChange={[Function]}
         placeholder="Amount..."
-        step={0.5}
+        step={0.01}
         type="number"
         value=""
       />
@@ -296,7 +296,7 @@ exports[`ExpenseForm component should render ExpenseForm with default values 1`]
       <input
         onChange={[Function]}
         placeholder="Amount..."
-        step={0.5}
+        step={0.01}
         type="number"
         value=""
       />
@@ -433,7 +433,7 @@ exports[`ExpenseForm component should render ExpenseForm with expense data 1`] =
       <input
         onChange={[Function]}
         placeholder="Amount..."
-        step={0.5}
+        step={0.01}
         type="number"
         value="166.6"
       />
@@ -570,7 +570,7 @@ exports[`ExpenseForm component should render error for invalid ExpenseForm submi
       <input
         onChange={[Function]}
         placeholder="Amount..."
-        step={0.5}
+        step={0.01}
         type="number"
         value=""
       />
@@ -712,7 +712,7 @@ exports[`ExpenseForm component should render error for invalid ExpenseForm submi
       <input
         onChange={[Function]}
         placeholder="Amount..."
-        step={0.5}
+        step={0.01}
         type="number"
         value=""
       />
@@ -849,7 +849,7 @@ exports[`ExpenseForm component should set amount on input change 1`] = `
       <input
         onChange={[Function]}
         placeholder="Amount..."
-        step={0.5}
+        step={0.01}
         type="number"
         value="25.55"
       />
@@ -986,7 +986,7 @@ exports[`ExpenseForm component should set description on input change 1`] = `
       <input
         onChange={[Function]}
         placeholder="Amount..."
-        step={0.5}
+        step={0.01}
         type="number"
         value=""
       />
@@ -1123,7 +1123,7 @@ exports[`ExpenseForm component should set note on textarea change 1`] = `
       <input
         onChange={[Function]}
         placeholder="Amount..."
-        step={0.5}
+        step={0.01}
         type="number"
         value=""
       />

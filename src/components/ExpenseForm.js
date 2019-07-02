@@ -134,10 +134,9 @@ export default class ExpenseForm extends Component {
                         <input
                             type="number"
                             placeholder="Amount..."
-                            step={1.0}
                             value={this.state.expense.amount}
                             onChange={this.onAmountChange}
-                            step={0.5}
+                            step={0.01}
                         />
                     </div>
                     <div>
