@@ -8,7 +8,7 @@ exports[`ExpenseListItem component should render ExpenseListItem with expense 1`
     Water Bill
   </Link>
    - 
-  166.6
+  €166,60
    - 
   April 19, 2019
   <button
