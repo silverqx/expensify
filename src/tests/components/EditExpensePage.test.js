@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { EditExpensePage } from '../../components/EditExpensePage';
+import { EditExpensePage } from '../../components/EditExpensePage'
 
 import { expensesWithIds as expenses } from '../fixtures/expenses'
 

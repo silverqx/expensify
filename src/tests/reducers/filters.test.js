@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-import filtersReducer from '../../reducers/filters';
+import filtersReducer from '../../reducers/filters'
 import * as types from '../../constants/filterActionTypes'
 
 describe('filter reducers', () => {

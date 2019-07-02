@@ -1,5 +1,5 @@
 import { expensesWithIds as expenses } from '../fixtures/expenses'
-import expensesReducer from '../../reducers/expenses';
+import expensesReducer from '../../reducers/expenses'
 import * as types from '../../constants/expenseActionTypes'
 
 describe('expense reducers', () => {

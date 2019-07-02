@@ -5,7 +5,7 @@ import ReactModal from 'react-modal'
 import ExpenseDashboardPage from './ExpenseDashboardPage'
 import AddExpensePage from './AddExpensePage'
 import EditExpensePage from './EditExpensePage'
-import Header from './Header';
+import Header from './Header'
 import NotFoundPage from './NotFoundPage'
 
 import ModalOption from './ModalOption'
