@@ -9,6 +9,7 @@ import { addExpense } from './actions/expenses'
 import { sortByAmount, setTextFilter } from './actions/filters'
 import getVisibleExpenses from './selectors/expenses'
 import expenses from './tests/fixtures/expenses'
+import './firebase/firebase'
 
 import 'normalize.css/normalize.css'
 import './styles/main.scss'

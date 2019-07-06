@@ -6,14 +6,14 @@ import { AddExpensePage } from '../../components/AddExpensePage'
 import expenses from '../fixtures/expenses'
 
 describe('AddExpensePage component', () => {
-    let addExpense, history, wrapper
+    let startAddExpense, history, wrapper
 
     beforeEach(() => {
-        addExpense = jest.fn()
+        startAddExpense = jest.fn()
         history = { push: jest.fn() }
         wrapper = shallow(
             <AddExpensePage
-                addExpense={addExpense}
+                startAddExpense={startAddExpense}
                 history={history}
             />
         )
@@ -23,11 +23,11 @@ describe('AddExpensePage component', () => {
         expect(wrapper).toMatchSnapshot()
     })
 
-    test('should handle addExpense on form onSubmit', () => {
+    test('should handle startAddExpense on form onSubmit', () => {
         wrapper.find('ExpenseForm').prop('onSubmit')(expenses[0])
 
-        expect(addExpense).toHaveBeenCalledTimes(1)
-        expect(addExpense).toHaveBeenCalledWith(expenses[0])
+        expect(startAddExpense).toHaveBeenCalledTimes(1)
+        expect(startAddExpense).toHaveBeenCalledWith(expenses[0])
 
         expect(history.push).toHaveBeenCalledTimes(1)
         expect(history.push).toHaveBeenCalledWith('/')
