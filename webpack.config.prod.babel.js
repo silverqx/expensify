@@ -16,8 +16,8 @@ import getClientEnvironment from './tools/env'
 
 const shouldUseSourceMap = true
 
-const configFactory = (env = {}) => {
-    const includeDashboard = env.includeDashboard || false
+const configFactory = (webpackEnv = {}) => {
+    const includeDashboard = webpackEnv.includeDashboard || false
     // Get environment variables to inject into our app.
     const env = getClientEnvironment()
 
