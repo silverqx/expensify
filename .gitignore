@@ -1,5 +1,6 @@
 .cache/
 .crystal/
+.env
 .env.*
 !.env.example
 .idea/
