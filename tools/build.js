@@ -5,8 +5,6 @@ import configFactory from "../webpack.config.prod.babel"
 process.env.BABEL_ENV = 'production'
 process.env.NODE_ENV = 'production'
 
-const isInteractive = process.stdout.isTTY
-
 process.on('unhandledRejection', err => {
     console.log(chalk.red('\nUnhandled Rejection\n'))
     console.log('Reason:')

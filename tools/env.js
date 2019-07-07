@@ -20,33 +20,58 @@ var dotenvFiles = [
 // that have already been set.  Variable expansion is supported in .env files.
 // https://github.com/motdotla/dotenv
 // https://github.com/motdotla/dotenv-expand
-let envRaw = {}
+let envFile
 dotenvFiles.forEach(dotenvFile => {
     if (fs.existsSync(dotenvFile)) {
-        const envParsed = require('dotenv-expand')(
+        const envFileTmp = require('dotenv-expand')(
             require('dotenv').config({
                 path: dotenvFile
             })
         ).parsed
 
-        envRaw = {
-            ...envRaw,
-            ...envParsed
+        envFile = {
+            ...envFile,
+            ...envFileTmp
         }
     }
 })
 
+// Grab NODE_ENV and REACT_APP_* environment variables and prepare them to be
+// injected into the application via DefinePlugin in Webpack configuration.
+// CS_APP_ prefix will be removed.
+const CS_APP = /^CS_APP_/
+
 function getClientEnvironment() {
+    const envProcess = Object.keys(process.env)
+        .filter(key => CS_APP.test(key))
+        .reduce(
+            (env, key) => {
+                // 7 is length of CS_APP_
+                const newKey = key.substring(7)
+                env[newKey] = process.env[key]
+
+                return env
+            },
+            {
+                // Useful for determining whether we’re running in production mode.
+                // Most importantly, it switches React into the correct mode.
+                NODE_ENV: process.env.NODE_ENV || 'development',
+            }
+        )
+    const raw = {
+        ...envFile,
+        ...envProcess
+    }
     // Stringify all values so we can feed into Webpack DefinePlugin
     const stringified = {
-        'process.env': Object.keys(envRaw)
+        'process.env': Object.keys(raw)
             .reduce((env, key) => {
-                env[key] = JSON.stringify(envRaw[key])
+                env[key] = JSON.stringify(raw[key])
                 return env
             }, {})
     }
 
-    return { envRaw, stringified }
+    return { raw, stringified }
 }
 
 export default getClientEnvironment
