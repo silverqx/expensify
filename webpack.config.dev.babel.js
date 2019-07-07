@@ -11,9 +11,12 @@ import ErrorOverlayPlugin from 'error-overlay-webpack-plugin'
 // import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin'
 
 import paths from './tools/paths'
+import getClientEnvironment from './tools/env'
 
-const configFactory = (env = {}) => {
-    const includeDashboard = env.includeDashboard || false
+const configFactory = (webpackEnv = {}) => {
+    const includeDashboard = webpackEnv.includeDashboard || false
+    // Get environment variables to inject into our app.
+    const env = getClientEnvironment()
 
     return {
         target: 'web',
@@ -80,6 +83,13 @@ const configFactory = (env = {}) => {
                 template: path.join('src', 'index.ejs'),
                 inject: true
             }),
+
+            // Makes some environment variables available to the JS code, for example:
+            // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
+            // It is absolutely essential that NODE_ENV is set to production
+            // during a production build.
+            // Otherwise React will be compiled in the very slow development mode.
+            new webpack.DefinePlugin(env.stringified),
 
             // Makes some environment variables available in index.html.
             // The public URL is available as %PUBLIC_URL% in index.html, e.g.:

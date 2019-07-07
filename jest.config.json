@@ -1,6 +1,7 @@
 {
   "setupFiles": [
-    "<rootDir>/src/tests/setupTests.js"
+    "<rootDir>/src/tests/setupTests.js",
+    "<rootDir>/src/tests/clearDatabase.js"
   ],
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
