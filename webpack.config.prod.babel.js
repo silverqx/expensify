@@ -12,11 +12,14 @@ import TerserPlugin from 'terser-webpack-plugin'
 // import InterpolateHtmlPlugin from 'react-dev-utils/InterpolateHtmlPlugin'
 
 import paths from './tools/paths'
+import getClientEnvironment from './tools/env'
 
 const shouldUseSourceMap = true
 
 const configFactory = (env = {}) => {
     const includeDashboard = env.includeDashboard || false
+    // Get environment variables to inject into our app.
+    const env = getClientEnvironment()
 
     return {
         target: 'web',
@@ -152,6 +155,13 @@ const configFactory = (env = {}) => {
                     minifyURLs: true,
                 },
             }),
+
+            // Makes some environment variables available to the JS code, for example:
+            // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
+            // It is absolutely essential that NODE_ENV is set to production
+            // during a production build.
+            // Otherwise React will be compiled in the very slow development mode.
+            new webpack.DefinePlugin(env.stringified),
 
             // Inlines the webpack runtime script. This script is too small to warrant
             // a network request.
