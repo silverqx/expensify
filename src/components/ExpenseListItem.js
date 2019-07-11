@@ -5,7 +5,7 @@ import { Link, withRouter } from 'react-router-dom'
 import numeral from 'numeral'
 import 'numeral/locales/sk'
 
-import { removeExpense } from '../actions/expenses'
+import { startRemoveExpense } from '../actions/expenses'
 
 numeral.locale('sk')
 
@@ -19,7 +19,7 @@ export const ExpenseListItem = ({ dispatch, history, id, description, note, amou
             Edit
         </button>
         <button
-            onClick={() => dispatch(removeExpense(id))}
+            onClick={() => dispatch(startRemoveExpense(id))}
         >
             Remove
         </button>

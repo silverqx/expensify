@@ -10,6 +10,7 @@ import {
     startAddExpense,
     editExpense,
     removeExpense,
+    startRemoveExpense,
     setExpenses,
     startSetExpenses,
 } from '../../actions/expenses'
@@ -148,7 +149,7 @@ describe('expense action creators', () => {
         })
     })
 
-    describe('fetch the expenses from firebase', () => {
+    describe('tests with preloaded expenses', () => {
         beforeAll((done) => {
             const expensesData = {}
             expensesWithIds.forEach(({ id, description, note, amount, createdAt }) => {
@@ -176,6 +177,26 @@ describe('expense action creators', () => {
                     })
                     done()
                 })
+        })
+    })
+
+    test('should setup startRemoveExpense action creator', (done) => {
+        const store = createMockStore({})
+        const id = expensesWithIds[1].id
+
+        store.dispatch(startRemoveExpense(id)).then(() => {
+            const actions = store.getActions()
+
+            expect(actions[0]).toEqual({
+                type: types.REMOVE_EXPENSE,
+                id
+            })
+
+            return database.ref(`expenses/${id}`).once('value')
+        }).then((snapshot) => {
+            expect(snapshot.val()).toBeFalsy()
+
+            done()
         })
     })
 })
