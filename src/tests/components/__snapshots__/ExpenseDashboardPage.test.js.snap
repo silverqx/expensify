@@ -6,7 +6,7 @@ exports[`ExpenseDashboardPage component should render ExpenseDashboardPage corre
     Expense Dashboard Page
   </h1>
   <h3>
-    Expense List
+    Expenses List
   </h3>
   <Connect(ExpensesSummary) />
   <Connect(ExpenseListFilters) />
