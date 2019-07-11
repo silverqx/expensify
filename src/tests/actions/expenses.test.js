@@ -9,6 +9,7 @@ import {
     addExpense,
     startAddExpense,
     editExpense,
+    startEditExpense,
     removeExpense,
     startRemoveExpense,
     setExpenses,
@@ -150,7 +151,7 @@ describe('expense action creators', () => {
     })
 
     describe('tests with preloaded expenses', () => {
-        beforeAll((done) => {
+        beforeEach((done) => {
             const expensesData = {}
             expensesWithIds.forEach(({ id, description, note, amount, createdAt }) => {
                 expensesData[id] = {
@@ -178,25 +179,51 @@ describe('expense action creators', () => {
                     done()
                 })
         })
-    })
 
-    test('should setup startRemoveExpense action creator', (done) => {
-        const store = createMockStore({})
-        const id = expensesWithIds[1].id
+        test('should remove expense from firebase', (done) => {
+            const store = createMockStore({})
+            const id = expensesWithIds[1].id
 
-        store.dispatch(startRemoveExpense(id)).then(() => {
-            const actions = store.getActions()
+            store.dispatch(startRemoveExpense(id)).then(() => {
+                const actions = store.getActions()
 
-            expect(actions[0]).toEqual({
-                type: types.REMOVE_EXPENSE,
-                id
+                expect(actions[0]).toEqual({
+                    type: types.REMOVE_EXPENSE,
+                    id
+                })
+
+                return database.ref(`expenses/${id}`).once('value')
+            }).then((snapshot) => {
+                expect(snapshot.val()).toBeFalsy()
+
+                done()
             })
+        })
 
-            return database.ref(`expenses/${id}`).once('value')
-        }).then((snapshot) => {
-            expect(snapshot.val()).toBeFalsy()
+        test('should update expense in firebase', (done) => {
+            const store = createMockStore({})
+            const id = expensesWithIds[2].id
+            const updates = {
+                description: 'Internet Bill Update',
+                amount: 50.33
+            }
 
-            done()
+            store.dispatch(startEditExpense(id, updates)).then(() => {
+                const actions = store.getActions()
+
+                expect(actions[0]).toEqual({
+                    type: types.EDIT_EXPENSE,
+                    id,
+                    updates
+                })
+
+                return database.ref(`expenses/${id}`).once('value')
+            }).then((snapshot) => {
+                expect(snapshot.val().description).toBe(updates.description)
+                expect(snapshot.val().amount).toBe(updates.amount)
+
+                done()
+            })
         })
     })
 })

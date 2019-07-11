@@ -6,16 +6,16 @@ import { EditExpensePage } from '../../components/EditExpensePage'
 import { expensesWithIds as expenses } from '../fixtures/expenses'
 
 describe('EditExpensePage component', () => {
-    let editExpense, history, wrapper
+    let startEditExpense, history, wrapper
 
     beforeEach(() => {
-        editExpense = jest.fn()
+        startEditExpense = jest.fn()
         history = { push: jest.fn() }
 
         wrapper = shallow(
             <EditExpensePage
                 expense={expenses[0]}
-                editExpense={editExpense}
+                startEditExpense={startEditExpense}
                 history={history}
             />
         )
@@ -25,7 +25,7 @@ describe('EditExpensePage component', () => {
         expect(wrapper).toMatchSnapshot()
     })
 
-    test('should handle editExpense on form onSubmit', () => {
+    test('should handle startEditExpense on form onSubmit', () => {
         const updatedExpense = {
             ...expenses[0],
             description: 'Water Bill Updated',
@@ -34,8 +34,8 @@ describe('EditExpensePage component', () => {
 
         wrapper.find('ExpenseForm').prop('onSubmit')(updatedExpense)
 
-        expect(editExpense).toHaveBeenCalledTimes(1)
-        expect(editExpense).toHaveBeenCalledWith(
+        expect(startEditExpense).toHaveBeenCalledTimes(1)
+        expect(startEditExpense).toHaveBeenCalledWith(
             expenses[0].id,
             updatedExpense
         )
