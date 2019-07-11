@@ -21,6 +21,8 @@ const expensesReducer = (state = expensesReducerInitialState, action) => {
             })
         case types.REMOVE_EXPENSE:
             return state.filter((expense) => expense.id !== action.id)
+        case types.SET_EXPENSES:
+            return action.expenses
         default:
             return state
     }

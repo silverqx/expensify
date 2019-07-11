@@ -23,7 +23,7 @@ const expenses = [{
 }]
 
 const expensesWithIds = expenses.map((expense, index) => ({
-    id: index + 1,
+    id: (index + 1) + '',
     ...expense
 }))
 
