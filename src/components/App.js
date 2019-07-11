@@ -25,6 +25,7 @@ export default class ExpensifyApp extends Component {
 
     state = {
         error: null,
+        // TODO implement subtitle silver
         subtitle: 'Xxx',
     }
 
