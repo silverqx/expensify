@@ -7,12 +7,12 @@ import ExpenseDashboardPage from './ExpenseDashboardPage'
 import AddExpensePage from './AddExpensePage'
 import EditExpensePage from './EditExpensePage'
 import LoginPage from './LoginPage'
-import Header from './Header'
 import NotFoundPage from './NotFoundPage'
 
 import ModalOption from './ModalOption'
+import PrivateRoute from '../routers/PrivateRoute'
 
-import { clearInputValue } from '../utils/utils'
+// import { clearInputValue } from '../utils/utils'
 
 import 'react-dates/lib/css/_datepicker.css'
 
@@ -67,12 +67,11 @@ export default class ExpensifyApp extends Component {
         return (
             <Router history={history}>
                 <div className="container">
-                    <Header />
                     <Switch>
                         <Route path="/" exact component={LoginPage} />
-                        <Route path="/dashboard" exact component={ExpenseDashboardPage} />
-                        <Route path="/create" component={AddExpensePage} />
-                        <Route path="/edit/:id" component={EditExpensePage} />
+                        <PrivateRoute path="/dashboard" exact component={ExpenseDashboardPage} />
+                        <PrivateRoute path="/create" component={AddExpensePage} />
+                        <PrivateRoute path="/edit/:id" component={EditExpensePage} />
                         <Route component={NotFoundPage} />
                     </Switch>
                     <ModalOption
