@@ -8,8 +8,10 @@ const authReducer = (state = authReducerInitialState, action) => {
             return {
                 uid: action.uid
             }
+
         case types.LOGOUT:
             return {}
+            
         default:
             return state
     }
