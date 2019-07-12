@@ -2,12 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
-import ExpensifyApp from './components/App'
+import ExpensifyApp, { history } from './components/App'
 
 import configureStore from './store/configureStore'
 import { startSetExpenses } from './actions/expenses'
+import { login, logout } from './actions/auth'
 // import initialSeed from './utils/initialSeed'
-import './firebase/firebase'
+import { firebase } from './firebase/firebase'
 
 import 'normalize.css/normalize.css'
 import './styles/main.scss'
@@ -23,11 +24,34 @@ const App = () => (
     </Provider>
 )
 
+let isRendered = false
 const appRoot = document.getElementById('app')
+const renderApp = () => {
+    if (isRendered)
+        return
+
+    ReactDOM.render(<App />, appRoot)
+    isRendered = true
+}
 
 ReactDOM.render(<p>Loading...</p>, appRoot)
 
-store.dispatch(startSetExpenses())
-    .then(() => {
-        ReactDOM.render(<App />, appRoot)
-    })
+firebase.auth().onAuthStateChanged((user) => {
+    if (!user) {
+        store.dispatch(logout())
+        renderApp()
+
+        history.push('/')
+
+        return
+    }
+
+    store.dispatch(startSetExpenses())
+        .then(() => {
+            store.dispatch(login(user.uid))
+            renderApp()
+
+            if (history.location.pathname === '/')
+                history.push('/dashboard')
+        })
+})

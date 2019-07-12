@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { Router, Route, Switch } from "react-router-dom"
 import ReactModal from 'react-modal'
+import { createBrowserHistory } from 'history'
 
 import ExpenseDashboardPage from './ExpenseDashboardPage'
 import AddExpensePage from './AddExpensePage'
 import EditExpensePage from './EditExpensePage'
+import LoginPage from './LoginPage'
 import Header from './Header'
 import NotFoundPage from './NotFoundPage'
 
@@ -17,6 +19,8 @@ import 'react-dates/lib/css/_datepicker.css'
 // Make sure to bind modal to your appElement
 // (http://reactcommunity.org/react-modal/accessibility/)
 ReactModal.setAppElement('#app')
+
+export const history = createBrowserHistory()
 
 export default class ExpensifyApp extends Component {
     static defaultProps = {
@@ -61,11 +65,12 @@ export default class ExpensifyApp extends Component {
 
     render() {
         return (
-            <Router>
+            <Router history={history}>
                 <div className="container">
                     <Header />
                     <Switch>
-                        <Route path="/" exact component={ExpenseDashboardPage} />
+                        <Route path="/" exact component={LoginPage} />
+                        <Route path="/dashboard" exact component={ExpenseDashboardPage} />
                         <Route path="/create" component={AddExpensePage} />
                         <Route path="/edit/:id" component={EditExpensePage} />
                         <Route component={NotFoundPage} />
