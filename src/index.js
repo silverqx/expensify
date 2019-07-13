@@ -46,9 +46,9 @@ firebase.auth().onAuthStateChanged((user) => {
         return
     }
 
+    store.dispatch(login(user.uid))
     store.dispatch(startSetExpenses())
         .then(() => {
-            store.dispatch(login(user.uid))
             renderApp()
 
             if (history.location.pathname === '/')
