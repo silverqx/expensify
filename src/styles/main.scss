@@ -1,7 +1,9 @@
 /* Application Variables
  -----------------------------------------------------------------------------*/
+@import '~normalize.css/normalize.css';
 @import './base/variables';
 @import './base/layout';
+@import './components/box-layout';
 @import './components/container';
 @import './components/navigation';
 @import './components/button';

@@ -10,7 +10,6 @@ import { login, logout } from './actions/auth'
 // import initialSeed from './utils/initialSeed'
 import { firebase } from './firebase/firebase'
 
-import 'normalize.css/normalize.css'
 import './styles/main.scss'
 
 const store = configureStore()

@@ -2,53 +2,17 @@
  * Button Component
  */
 
-/* Big Button
- -----------------------------------------------------------------------------*/
-.big-button {
-    // background-color: $purple;
-    border: none;
-    // border-bottom: .6rem solid darken($purple, 10%);
-    color: white;
-    cursor: pointer;
-    font-size: 2.7rem;
-    font-weight: bold;
-    padding: 1.4rem;
-    width: 100%;
-}
-
-.big-button:disabled {
-    cursor: default;
-    opacity: .5;
-}
-
 /* Normal Button
  -----------------------------------------------------------------------------*/
 .button {
-    // background: $purple;
+    background: $blue;
     border: none;
-    // border-bottom: .3rem solid darken($purple, 10%);
     color: white;
     cursor: pointer;
-    font-size: $m-size;
+    font-size: $font-size-large;
     padding: $s-size;
 }
 
 .button:disabled {
     cursor: default;
 }
-
-// Like Link Button
-.button--link {
-    background: none;
-    border: none;
-    // color: $off-white;
-    height: 5.5rem;
-    min-width: 9rem;
-    padding: 0;
-}
-
-.button--link:hover,
-.button--link:active {
-    // color: lighten($off-white, 15%);
-}
-
