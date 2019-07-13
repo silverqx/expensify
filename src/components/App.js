@@ -11,6 +11,7 @@ import NotFoundPage from './NotFoundPage'
 
 import ModalOption from './ModalOption'
 import PrivateRoute from '../routers/PrivateRoute'
+import PublicRoute from '../routers/PublicRoute'
 
 // import { clearInputValue } from '../utils/utils'
 
@@ -68,8 +69,8 @@ export default class ExpensifyApp extends Component {
             <Router history={history}>
                 <div className="container">
                     <Switch>
-                        <Route path="/" exact component={LoginPage} />
-                        <PrivateRoute path="/dashboard" exact component={ExpenseDashboardPage} />
+                        <PublicRoute path="/" exact component={LoginPage} />
+                        <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
                         <PrivateRoute path="/create" component={AddExpensePage} />
                         <PrivateRoute path="/edit/:id" component={EditExpensePage} />
                         <Route component={NotFoundPage} />
