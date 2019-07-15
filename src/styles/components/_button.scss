@@ -8,11 +8,32 @@
     background: $blue;
     border: none;
     color: white;
+    display: inline-block;
     cursor: pointer;
     font-size: $font-size-large;
+    font-weight: normal;
+    line-height: 1;
     padding: $s-size;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:active {
+    background-color: darken($blue, 10%);
 }
 
 .button:disabled {
     cursor: default;
 }
+
+// Like Link Button
+.button--link {
+    background: none;
+}
+
+.button--link:hover,
+.button--link:active {
+    background: none;
+    color: darken(white, 15%);
+}
+
