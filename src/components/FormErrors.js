@@ -2,7 +2,7 @@ import React from 'react'
 
 // TODO write test for <FormErrors /> silver
 const FormErrors = ({ errors }) => (
-    <div>
+    <div className="form-errors">
         {
             errors &&
                 errors.map((error, index) => (

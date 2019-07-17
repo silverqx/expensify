@@ -119,53 +119,49 @@ export default class ExpenseForm extends Component {
         return (
             <div>
                 <FormErrors errors={this.state.errors} />
-                <form onSubmit={this.onSubmit}>
-                    <div>
-                        <input
-                            type="text"
-                            autoFocus
-                            maxLength={255}
-                            placeholder="Description..."
-                            value={this.state.expense.description}
-                            onChange={this.onDescriptionChange}
-                        />
-                    </div>
-                    <div>
-                        <input
-                            type="number"
-                            placeholder="Amount..."
-                            value={this.state.expense.amount}
-                            onChange={this.onAmountChange}
-                            step={0.01}
-                        />
-                    </div>
-                    <div>
-                        <SingleDatePicker
-                            id="created-at"
-                            date={this.state.expense.createdAt}
-                            onDateChange={this.onDateChange}
-                            focused={this.state.datepickerFocused}
-                            onFocusChange={({ focused }) => this.setState({ datepickerFocused: focused })}
-                            isOutsideRange={() => false}
-                            numberOfMonths={1}
-                            placeholder="Created At..."
-                            small={true}
-                            daySize={32}
-                        />
-                    </div>
-                    <div>
-                        <textarea
-                            cols="30"
-                            rows="4"
-                            placeholder="Note... (optional)"
-                            value={this.state.expense.note}
-                            onChange={this.onNoteChange}
-                        ></textarea>
-                    </div>
+                <form onSubmit={this.onSubmit} className="form">
+                    <input
+                        type="text"
+                        autoFocus
+                        maxLength={255}
+                        placeholder="Description..."
+                        value={this.state.expense.description}
+                        onChange={this.onDescriptionChange}
+                        className="text-input"
+                    />
+                    <input
+                        type="number"
+                        placeholder="Amount..."
+                        value={this.state.expense.amount}
+                        onChange={this.onAmountChange}
+                        step={0.01}
+                        className="text-input"
+                    />
+                    <SingleDatePicker
+                        id="created-at"
+                        date={this.state.expense.createdAt}
+                        onDateChange={this.onDateChange}
+                        focused={this.state.datepickerFocused}
+                        onFocusChange={({ focused }) => this.setState({ datepickerFocused: focused })}
+                        isOutsideRange={() => false}
+                        numberOfMonths={1}
+                        placeholder="Created At..."
+                        small={false}
+                        daySize={32}
+                    />
+                    <textarea
+                        cols="30"
+                        rows="4"
+                        placeholder="Note... (optional)"
+                        value={this.state.expense.note}
+                        onChange={this.onNoteChange}
+                        className="textarea"
+                    ></textarea>
                     <div>
                         <input
                             type="submit"
                             value={this.props.expense ? 'Edit Expense' : 'Add Expense'}
+                            className="button"
                         />
                     </div>
                 </form>

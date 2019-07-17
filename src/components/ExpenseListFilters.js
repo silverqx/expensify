@@ -27,36 +27,47 @@ export class ExpenseListFilters extends Component {
 
     render() {
         return (
-            <div>
-                <input
-                    autoFocus
-                    type="text"
-                    value={this.props.filters.text}
-                    onChange={e => this.props.setTextFilter(e.target.value)}
-                />
-                <select
-                    value={this.props.filters.sortBy}
-                    onChange={e => this.getSortFilter(e.target.value)}
-                >
-                    <option value="date">Date</option>
-                    <option value="amount">Amount</option>
-                </select>
-                <DateRangePicker
-                    startDate={this.props.filters.startDate}
-                    endDate={this.props.filters.endDate}
-                    startDateId="created-at-start-date"
-                    endDateId="created-at-end-date"
-                    startDatePlaceholderText="Start Date..."
-                    endDatePlaceholderText="End Date..."
-                    isOutsideRange={() => false}
-                    numberOfMonths={1}
-                    small={true}
-                    daySize={32}
-                    showClearDates={true}
-                    focusedInput={this.state.datepickerFocused}
-                    onDatesChange={this.onDatesChange}
-                    onFocusChange={datepickerFocused => this.setState({ datepickerFocused })}
-                />
+            <div className="content-container">
+                <div className="input-group">
+                    <div className="input-group__item">
+                        <input
+                            autoFocus
+                            type="text"
+                            value={this.props.filters.text}
+                            onChange={e => this.props.setTextFilter(e.target.value)}
+                            className="text-input"
+                            placeholder="Search expenses..."
+                        />
+                    </div>
+                    <div className="input-group__item">
+                        <select
+                            value={this.props.filters.sortBy}
+                            onChange={e => this.getSortFilter(e.target.value)}
+                            className="select"
+                        >
+                            <option value="date">Date</option>
+                            <option value="amount">Amount</option>
+                        </select>
+                    </div>
+                    <div className="input-group__item">
+                        <DateRangePicker
+                            startDate={this.props.filters.startDate}
+                            endDate={this.props.filters.endDate}
+                            startDateId="created-at-start-date"
+                            endDateId="created-at-end-date"
+                            startDatePlaceholderText="Start Date..."
+                            endDatePlaceholderText="End Date..."
+                            isOutsideRange={() => false}
+                            numberOfMonths={1}
+                            small={false}
+                            daySize={32}
+                            showClearDates={true}
+                            focusedInput={this.state.datepickerFocused}
+                            onDatesChange={this.onDatesChange}
+                            onFocusChange={datepickerFocused => this.setState({ datepickerFocused })}
+                        />
+                    </div>
+                </div>
             </div>
         )
     }
