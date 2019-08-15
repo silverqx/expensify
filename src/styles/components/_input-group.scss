@@ -12,7 +12,15 @@
 .input-group__item {
     margin-bottom: $s-size;
 
+    &:first-child {
+        flex-grow: 1;
+    }
+
     @media (min-width: $desktop-breakpoint) {
         margin: 0 $s-size 0 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }

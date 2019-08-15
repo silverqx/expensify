@@ -35,7 +35,7 @@ export class ExpenseListFilters extends Component {
                             type="text"
                             value={this.props.filters.text}
                             onChange={e => this.props.setTextFilter(e.target.value)}
-                            className="text-input"
+                            className="text-input item-search"
                             placeholder="Search expenses..."
                         />
                     </div>
@@ -43,7 +43,7 @@ export class ExpenseListFilters extends Component {
                         <select
                             value={this.props.filters.sortBy}
                             onChange={e => this.getSortFilter(e.target.value)}
-                            className="select"
+                            className="select item-sort"
                         >
                             <option value="date">Date</option>
                             <option value="amount">Amount</option>

@@ -2,9 +2,13 @@
 $blue: #1c88bf;
 $dark-blue: #364051;
 $dark-grey: #333;
+$grey: #666;
+$off-white: #f7f7f7;
 
 // Font size
 $font-size-large: 1.8rem;
+$font-size-normal: 1.6rem;
+$font-size-small: 1.2rem;
 
 // Spacing
 $s-size: 1.2rem;
@@ -13,4 +17,5 @@ $l-size: 3.2rem;
 $xl-size: 4.8rem;
 
 // Media Query Breakpoints
-$desktop-breakpoint: 35rem;
+$desktop-breakpoint: 48rem;
+$small-phone-breakpoint: 30rem;

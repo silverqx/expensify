@@ -6,17 +6,27 @@ import ExpenseListItem from './ExpenseListItem'
 import getVisibleExpenses from '../selectors/expenses'
 
 export const ExpenseList = ({ history, expenses }) => (
-    <div>
-        {
-            expenses.length === 0 ?
-                <p>No Expenses</p> :
-                expenses.map((expense) => (
-                    <ExpenseListItem
-                        key={expense.id}
-                        {...expense}
-                    />
-                ))
-        }
+    <div className="content-container">
+        <div className="list">
+            <div className="list__header">
+                <div className="show-on-desktop">Expense</div>
+                <div className="show-on-desktop">Amount</div>
+                <div className="show-on-mobile">Expenses</div>
+            </div>
+
+            <div className="list__content">
+                {
+                    expenses.length === 0 ?
+                        <p>No Expenses</p> :
+                        expenses.map((expense) => (
+                            <ExpenseListItem
+                                key={expense.id}
+                                {...expense}
+                            />
+                        ))
+                }
+            </div>
+        </div>
     </div>
 )
 

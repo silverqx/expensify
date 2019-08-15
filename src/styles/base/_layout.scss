@@ -8,9 +8,11 @@ html {
 
 body {
     color: $dark-grey;
-    font-size: $m-size;
+    font-size: $font-size-normal;
     font-family: Helvetica, Arial, sans-serif;
     line-height: 1.6;
+    min-width: 26rem;
+    padding-bottom: 7rem;
 }
 
 ul {

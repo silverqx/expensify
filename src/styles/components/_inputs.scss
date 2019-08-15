@@ -14,3 +14,31 @@
     @extend .text-input;
     height: 10rem;
 }
+
+.item-search {
+    max-width: 31.6rem;
+    min-width: 22.8rem;
+    width: 100%;
+}
+
+@media (min-width: $desktop-breakpoint) {
+    .item-search {
+        max-width: none;
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+.item-sort {
+    max-width: 31.6rem;
+    min-width: 22.8rem;
+    width: 100%;
+}
+
+@media (min-width: $desktop-breakpoint) {
+    .item-sort {
+        max-width: none;
+        min-width: auto;
+        width: auto;
+    }
+}

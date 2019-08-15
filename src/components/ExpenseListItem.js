@@ -11,9 +11,13 @@ numeral.locale('sk')
 
 // TODO find out how to correctly pass history and expense silver
 export const ExpenseListItem = ({ dispatch, history, id, description, note, amount, createdAt}) => (
-    <div>
-        <Link to={`/edit/${id}`}>{description}</Link> - {numeral(amount).format('$0,0.00')} - {moment(createdAt).format('LL')}
-        <button
+    <Link to={`/edit/${id}`} className="list-item">
+        <div>
+            <h3 className="list-item__title">{description}</h3>
+            <div className="list-item__created-at">{moment(createdAt).format('LL')}</div>
+        </div>
+        <div className="list-item__amount">{numeral(amount).format('$0,0.00')}</div>
+        {/* <button
             onClick={() => history.push(`/edit/${id}`)}
         >
             Edit
@@ -22,8 +26,8 @@ export const ExpenseListItem = ({ dispatch, history, id, description, note, amou
             onClick={() => dispatch(startRemoveExpense(id))}
         >
             Remove
-        </button>
-    </div>
+        </button> */}
+    </Link>
 )
 
 export default withRouter(connect()(ExpenseListItem))
