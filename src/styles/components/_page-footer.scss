@@ -1,0 +1,20 @@
+.page-footer {
+    font-size: 1.3rem;
+    padding: 1rem 0 1rem 0.3rem;
+
+    a, a:link, a:visited {
+        color: $dark-grey;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    a:hover, a:active {
+        text-decoration: underline;
+    }
+}
+
+@media (min-width: $desktop-breakpoint) {
+    .page-footer {
+        padding-left: 1.3rem;
+    }
+}

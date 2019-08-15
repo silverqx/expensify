@@ -9,6 +9,7 @@ import EditExpensePage from './EditExpensePage'
 import LoginPage from './LoginPage'
 import NotFoundPage from './NotFoundPage'
 
+import Footer from './Footer'
 import ModalOption from './ModalOption'
 import PrivateRoute from '../routers/PrivateRoute'
 import PublicRoute from '../routers/PublicRoute'
@@ -79,6 +80,7 @@ export default class ExpensifyApp extends Component {
                         selectedOption={this.state.selectedOption}
                         handleClearSelectedOption={this.handleClearSelectedOption}
                     />
+                    <Footer />
                 </div>
             </Router>
         )
