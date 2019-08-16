@@ -12,3 +12,48 @@
     font-style: italic;
     margin-bottom: $m-size;
 }
+
+// Form Actions
+.form-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-actions__left,
+.form-actions__right {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+        margin-bottom: $s-size;
+    }
+}
+
+.form-actions__right > *:first-child {
+    margin-top: $s-size;
+}
+
+.form-actions__left > *:last-child,
+.form-actions__right > *:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: $small-phone-breakpoint) {
+    .form-actions {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form-actions__left,
+    .form-actions__right {
+        flex-direction: row;
+    }
+
+    .form-actions__left > * {
+        margin: 0 $s-size 0 0 !important;
+    }
+
+    .form-actions__right > * {
+        margin: 0 !important;
+    }
+}

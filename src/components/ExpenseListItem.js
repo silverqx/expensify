@@ -17,16 +17,6 @@ export const ExpenseListItem = ({ dispatch, history, id, description, note, amou
             <div className="list-item__created-at">{moment(createdAt).format('LL')}</div>
         </div>
         <div className="list-item__amount">{numeral(amount).format('$0,0.00')}</div>
-        {/* <button
-            onClick={() => history.push(`/edit/${id}`)}
-        >
-            Edit
-        </button>
-        <button
-            onClick={() => dispatch(startRemoveExpense(id))}
-        >
-            Remove
-        </button> */}
     </Link>
 )
 

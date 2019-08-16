@@ -32,4 +32,11 @@ describe('AddExpensePage component', () => {
         expect(history.push).toHaveBeenCalledTimes(1)
         expect(history.push).toHaveBeenCalledWith('/')
     })
+
+    test('should go to home on form onCancel', () => {
+        wrapper.find('ExpenseForm').prop('onCancel')()
+
+        expect(history.push).toHaveBeenCalledTimes(1)
+        expect(history.push).toHaveBeenCalledWith('/')
+    })
 })

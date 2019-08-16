@@ -157,12 +157,28 @@ export default class ExpenseForm extends Component {
                         onChange={this.onNoteChange}
                         className="textarea"
                     ></textarea>
-                    <div>
-                        <input
-                            type="submit"
-                            value={this.props.expense ? 'Edit Expense' : 'Add Expense'}
-                            className="button"
-                        />
+                    <div className="form-actions">
+                        <div className="form-actions__left">
+                            <input
+                                type="submit"
+                                value={this.props.expense ? 'Edit Expense' : 'Add Expense'}
+                                className="button button-primary"
+                            />
+                            <button
+                                type="button"
+                                className="button"
+                                onClick={this.props.onCancel}
+                            >Cancel</button>
+                        </div>
+                        {this.props.expense && (
+                            <div className="form-actions__right">
+                                <button
+                                    type="button"
+                                    className="button"
+                                    onClick={this.props.onRemove}
+                                >Remove Expense</button>
+                            </div>
+                        )}
                     </div>
                 </form>
             </div>

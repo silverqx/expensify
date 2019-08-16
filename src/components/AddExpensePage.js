@@ -11,6 +11,10 @@ export class AddExpensePage extends Component {
         this.props.history.push('/')
     }
 
+    onCancel = () => {
+        this.props.history.push('/')
+    }
+
     render() {
         return (
             <div>
@@ -20,7 +24,10 @@ export class AddExpensePage extends Component {
                     </div>
                 </div>
                 <div className="content-container">
-                    <ExpenseForm onSubmit={this.onSubmit} />
+                    <ExpenseForm
+                        onSubmit={this.onSubmit}
+                        onCancel={this.onCancel}
+                    />
                 </div>
             </div>
         )

@@ -30,7 +30,7 @@ exports[`ExpensesSummary component should correctly render ExpensesSummary multi
       className="page-header__actions"
     >
       <Link
-        className="button"
+        className="button button-primary"
         to="/create"
       >
         Add Expense
@@ -70,7 +70,7 @@ exports[`ExpensesSummary component should correctly render ExpensesSummary with 
       className="page-header__actions"
     >
       <Link
-        className="button"
+        className="button button-primary"
         to="/create"
       >
         Add Expense

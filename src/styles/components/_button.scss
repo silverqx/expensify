@@ -5,9 +5,9 @@
 /* Normal Button
  -----------------------------------------------------------------------------*/
 .button {
-    background: $blue;
+    background: darken($off-white, 3%);
     border: none;
-    color: white;
+    color: $dark-grey;
     display: inline-block;
     cursor: pointer;
     font-size: $font-size-large;
@@ -19,7 +19,7 @@
 
 .button:hover,
 .button:active {
-    background-color: darken($blue, 10%);
+    background-color: darken($off-white, 10%);
 }
 
 .button:disabled {
@@ -28,6 +28,7 @@
 
 // Like Link Button
 .button--link {
+    color: white;
     background: none;
 }
 
@@ -37,3 +38,12 @@
     color: darken(white, 15%);
 }
 
+.button-primary {
+    background: $blue;
+    color: white;
+}
+
+.button-primary:hover,
+.button-primary:active {
+    background-color: darken($blue, 10%);
+}

@@ -19,7 +19,7 @@ export const ExpensesSummary = ({ expensesCount, expensesTotal}) => {
                     <span>with total amount <strong>{formattedExpensesTotal}</strong></span>
                 </h2>
                 <div className="page-header__actions">
-                    <Link to="/create" className="button">Add Expense</Link>
+                    <Link to="/create" className="button button-primary">Add Expense</Link>
                 </div>
             </div>
         </div>

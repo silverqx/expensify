@@ -28,6 +28,8 @@ exports[`EditExpensePage component should render EditExpensePage correctly 1`] =
           "note": "Water Bill Note",
         }
       }
+      onCancel={[Function]}
+      onRemove={[Function]}
       onSubmit={[Function]}
     />
   </div>

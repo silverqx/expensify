@@ -123,12 +123,34 @@ exports[`ExpenseForm component should call onSubmit prop for valid form submissi
       rows="4"
       value="Gas Bill Note"
     />
-    <div>
-      <input
-        className="button"
-        type="submit"
-        value="Edit Expense"
-      />
+    <div
+      className="form-actions"
+    >
+      <div
+        className="form-actions__left"
+      >
+        <input
+          className="button button-primary"
+          type="submit"
+          value="Edit Expense"
+        />
+        <button
+          className="button"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
+      <div
+        className="form-actions__right"
+      >
+        <button
+          className="button"
+          type="button"
+        >
+          Remove Expense
+        </button>
+      </div>
     </div>
   </form>
 </div>
@@ -257,12 +279,24 @@ exports[`ExpenseForm component should not set amount on invalid input 1`] = `
       rows="4"
       value=""
     />
-    <div>
-      <input
-        className="button"
-        type="submit"
-        value="Add Expense"
-      />
+    <div
+      className="form-actions"
+    >
+      <div
+        className="form-actions__left"
+      >
+        <input
+          className="button button-primary"
+          type="submit"
+          value="Add Expense"
+        />
+        <button
+          className="button"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>
@@ -391,12 +425,24 @@ exports[`ExpenseForm component should render ExpenseForm with default values 1`]
       rows="4"
       value=""
     />
-    <div>
-      <input
-        className="button"
-        type="submit"
-        value="Add Expense"
-      />
+    <div
+      className="form-actions"
+    >
+      <div
+        className="form-actions__left"
+      >
+        <input
+          className="button button-primary"
+          type="submit"
+          value="Add Expense"
+        />
+        <button
+          className="button"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>
@@ -525,12 +571,34 @@ exports[`ExpenseForm component should render ExpenseForm with expense data 1`] =
       rows="4"
       value="Water Bill Note"
     />
-    <div>
-      <input
-        className="button"
-        type="submit"
-        value="Edit Expense"
-      />
+    <div
+      className="form-actions"
+    >
+      <div
+        className="form-actions__left"
+      >
+        <input
+          className="button button-primary"
+          type="submit"
+          value="Edit Expense"
+        />
+        <button
+          className="button"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
+      <div
+        className="form-actions__right"
+      >
+        <button
+          className="button"
+          type="button"
+        >
+          Remove Expense
+        </button>
+      </div>
     </div>
   </form>
 </div>
@@ -659,12 +727,24 @@ exports[`ExpenseForm component should render error for invalid ExpenseForm submi
       rows="4"
       value=""
     />
-    <div>
-      <input
-        className="button"
-        type="submit"
-        value="Add Expense"
-      />
+    <div
+      className="form-actions"
+    >
+      <div
+        className="form-actions__left"
+      >
+        <input
+          className="button button-primary"
+          type="submit"
+          value="Add Expense"
+        />
+        <button
+          className="button"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>
@@ -798,12 +878,24 @@ exports[`ExpenseForm component should render error for invalid ExpenseForm submi
       rows="4"
       value=""
     />
-    <div>
-      <input
-        className="button"
-        type="submit"
-        value="Add Expense"
-      />
+    <div
+      className="form-actions"
+    >
+      <div
+        className="form-actions__left"
+      >
+        <input
+          className="button button-primary"
+          type="submit"
+          value="Add Expense"
+        />
+        <button
+          className="button"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>
@@ -932,12 +1024,24 @@ exports[`ExpenseForm component should set amount on input change 1`] = `
       rows="4"
       value=""
     />
-    <div>
-      <input
-        className="button"
-        type="submit"
-        value="Add Expense"
-      />
+    <div
+      className="form-actions"
+    >
+      <div
+        className="form-actions__left"
+      >
+        <input
+          className="button button-primary"
+          type="submit"
+          value="Add Expense"
+        />
+        <button
+          className="button"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>
@@ -1066,12 +1170,24 @@ exports[`ExpenseForm component should set description on input change 1`] = `
       rows="4"
       value=""
     />
-    <div>
-      <input
-        className="button"
-        type="submit"
-        value="Add Expense"
-      />
+    <div
+      className="form-actions"
+    >
+      <div
+        className="form-actions__left"
+      >
+        <input
+          className="button button-primary"
+          type="submit"
+          value="Add Expense"
+        />
+        <button
+          className="button"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>
@@ -1200,12 +1316,24 @@ exports[`ExpenseForm component should set note on textarea change 1`] = `
       rows="4"
       value="New Note"
     />
-    <div>
-      <input
-        className="button"
-        type="submit"
-        value="Add Expense"
-      />
+    <div
+      className="form-actions"
+    >
+      <div
+        className="form-actions__left"
+      >
+        <input
+          className="button button-primary"
+          type="submit"
+          value="Add Expense"
+        />
+        <button
+          className="button"
+          type="button"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>
