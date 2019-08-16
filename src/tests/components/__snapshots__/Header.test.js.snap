@@ -1,35 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header component should render Header correctly 1`] = `
-<div>
-  <nav>
-    <ul
-      className="navigation"
+<div
+  className="header"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="header__content"
     >
-      <li
-        className="navigation__item"
+      <Link
+        className="header__title"
+        to="/dashboard"
       >
-        <NavLink
-          to="/dashboard"
-        >
-          Dashboard
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/create"
-        >
-          Add Expense
-        </NavLink>
-      </li>
-    </ul>
-  </nav>
-  <div>
-    <button
-      onClick={[Function]}
-    >
-      Logout
-    </button>
+        <h1>
+          Expensify
+        </h1>
+      </Link>
+      <button
+        className="button button--link"
+        onClick={[Function]}
+      >
+        Logout
+      </button>
+    </div>
   </div>
 </div>
 `;

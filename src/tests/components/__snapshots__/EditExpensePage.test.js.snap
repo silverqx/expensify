@@ -2,20 +2,34 @@
 
 exports[`EditExpensePage component should render EditExpensePage correctly 1`] = `
 <div>
-  <h1>
-    Edit Expense
-  </h1>
-  <ExpenseForm
-    expense={
-      Object {
-        "amount": 166.6,
-        "createdAt": 1555624800000,
-        "description": "Water Bill",
-        "id": "1",
-        "note": "Water Bill Note",
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1
+        className="page-header__title"
+      >
+        Edit Expense
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <ExpenseForm
+      expense={
+        Object {
+          "amount": 166.6,
+          "createdAt": 1555624800000,
+          "description": "Water Bill",
+          "id": "1",
+          "note": "Water Bill Note",
+        }
       }
-    }
-    onSubmit={[Function]}
-  />
+      onSubmit={[Function]}
+    />
+  </div>
 </div>
 `;

@@ -1,46 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ExpenseList component should render ExpenseList with empty expenses 1`] = `
-<div>
-  <p>
-    No Expenses
-  </p>
+<div
+  className="content-container"
+>
+  <div
+    className="list"
+  >
+    <div
+      className="list__header"
+    >
+      <div
+        className="show-on-desktop"
+      >
+        Expense
+      </div>
+      <div
+        className="show-on-desktop"
+      >
+        Amount
+      </div>
+      <div
+        className="show-on-mobile"
+      >
+        Expenses
+      </div>
+    </div>
+    <div
+      className="list__content"
+    >
+      <p>
+        No Expenses
+      </p>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`ExpenseList component should render ExpenseList with expenses 1`] = `
-<div>
-  <withRouter(Connect(ExpenseListItem))
-    amount={166.6}
-    createdAt={1555624800000}
-    description="Water Bill"
-    id="1"
-    key="1"
-    note="Water Bill Note"
-  />
-  <withRouter(Connect(ExpenseListItem))
-    amount={5.2}
-    createdAt={1552777200000}
-    description="Gas Bill"
-    id="2"
-    key="2"
-    note="Gas Bill Note"
-  />
-  <withRouter(Connect(ExpenseListItem))
-    amount={50.2}
-    createdAt={1554760800000}
-    description="Internet Bill"
-    id="3"
-    key="3"
-    note="Internet Bill Note"
-  />
-  <withRouter(Connect(ExpenseListItem))
-    amount={10.2}
-    createdAt={1547074800000}
-    description="Telekom Bill"
-    id="4"
-    key="4"
-    note="Telekom Bill Note"
-  />
+<div
+  className="content-container"
+>
+  <div
+    className="list"
+  >
+    <div
+      className="list__header"
+    >
+      <div
+        className="show-on-desktop"
+      >
+        Expense
+      </div>
+      <div
+        className="show-on-desktop"
+      >
+        Amount
+      </div>
+      <div
+        className="show-on-mobile"
+      >
+        Expenses
+      </div>
+    </div>
+    <div
+      className="list__content"
+    >
+      <withRouter(Connect(ExpenseListItem))
+        amount={166.6}
+        createdAt={1555624800000}
+        description="Water Bill"
+        id="1"
+        key="1"
+        note="Water Bill Note"
+      />
+      <withRouter(Connect(ExpenseListItem))
+        amount={5.2}
+        createdAt={1552777200000}
+        description="Gas Bill"
+        id="2"
+        key="2"
+        note="Gas Bill Note"
+      />
+      <withRouter(Connect(ExpenseListItem))
+        amount={50.2}
+        createdAt={1554760800000}
+        description="Internet Bill"
+        id="3"
+        key="3"
+        note="Internet Bill Note"
+      />
+      <withRouter(Connect(ExpenseListItem))
+        amount={10.2}
+        createdAt={1547074800000}
+        description="Telekom Bill"
+        id="4"
+        key="4"
+        note="Telekom Bill Note"
+      />
+    </div>
+  </div>
 </div>
 `;
