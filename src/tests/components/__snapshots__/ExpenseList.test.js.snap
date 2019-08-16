@@ -29,9 +29,11 @@ exports[`ExpenseList component should render ExpenseList with empty expenses 1`]
     <div
       className="list__content"
     >
-      <p>
+      <div
+        className="list__content--empty"
+      >
         No Expenses
-      </p>
+      </div>
     </div>
   </div>
 </div>
