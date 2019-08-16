@@ -16,6 +16,15 @@
 
 }
 
+.list__content--empty {
+    border: 1px solid darken($off-white, 6%);
+    border-top-width: 0;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    padding: $m-size;
+}
+
 .list-item {
     border: 1px solid darken($off-white, 6%);
     border-top-width: 0;

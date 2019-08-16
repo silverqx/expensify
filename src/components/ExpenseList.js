@@ -17,7 +17,7 @@ export const ExpenseList = ({ history, expenses }) => (
             <div className="list__content">
                 {
                     expenses.length === 0 ?
-                        <p>No Expenses</p> :
+                        <div className="list__content--empty">No Expenses</div> :
                         expenses.map((expense) => (
                             <ExpenseListItem
                                 key={expense.id}
