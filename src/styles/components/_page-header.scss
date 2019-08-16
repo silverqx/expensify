@@ -5,9 +5,10 @@
 }
 
 .page-header__actions {
-    margin-top: $m-size;
+    margin: $m-size 0 0;
 }
 
 .page-header__title {
     font-weight: normal;
+    margin: 0;
 }
