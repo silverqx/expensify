@@ -9,7 +9,6 @@ import EditExpensePage from './EditExpensePage'
 import LoginPage from './LoginPage'
 import NotFoundPage from './NotFoundPage'
 
-import Footer from './Footer'
 import ModalOption from './ModalOption'
 import PrivateRoute from '../routers/PrivateRoute'
 import PublicRoute from '../routers/PublicRoute'
@@ -68,22 +67,17 @@ export default class ExpensifyApp extends Component {
     render() {
         return (
             <Router history={history}>
-                <div className="container">
-                    <div className="primary-container">
-                        <Switch>
-                            <PublicRoute path="/" exact component={LoginPage} />
-                            <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
-                            <PrivateRoute path="/create" component={AddExpensePage} />
-                            <PrivateRoute path="/edit/:id" component={EditExpensePage} />
-                            <Route component={NotFoundPage} />
-                        </Switch>
-                        <ModalOption
-                            selectedOption={this.state.selectedOption}
-                            handleClearSelectedOption={this.handleClearSelectedOption}
-                        />
-                    </div>
-                    <Footer />
-                </div>
+                <Switch>
+                    <PublicRoute path="/" exact component={LoginPage} />
+                    <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
+                    <PrivateRoute path="/create" component={AddExpensePage} />
+                    <PrivateRoute path="/edit/:id" component={EditExpensePage} />
+                    <Route component={NotFoundPage} />
+                </Switch>
+                <ModalOption
+                    selectedOption={this.state.selectedOption}
+                    handleClearSelectedOption={this.handleClearSelectedOption}
+                />
             </Router>
         )
     }
