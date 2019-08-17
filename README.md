@@ -4,6 +4,8 @@ Expensify react / redux test application with Firebase as data store and webpack
 
 Demo is hosted on Heroku https://cs-expensify-app.herokuapp.com
 
+For tests is used jest with enzyme.
+
 ## 🚀 Quick start
 
 1.  **Clone repository.**
