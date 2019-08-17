@@ -2,7 +2,6 @@ import path from 'path'
 
 import webpack from 'webpack'
 import DashboardPlugin from 'webpack-dashboard/plugin'
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ModuleScopePlugin from 'react-dev-utils/ModuleScopePlugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
@@ -135,7 +134,6 @@ const configFactory = (webpackEnv = {}) => {
         },
 
         plugins: [
-            new CleanWebpackPlugin(),
             // new webpack.DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),
             // new HardSourceWebpackPlugin(),
 
