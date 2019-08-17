@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
 import ExpensifyApp, { history } from './components/App'
+import LoadingPage from './components/LoadingPage'
 
 import configureStore from './store/configureStore'
 import { startSetExpenses } from './actions/expenses'
@@ -33,7 +34,7 @@ const renderApp = () => {
     isRendered = true
 }
 
-ReactDOM.render(<p>Loading...</p>, appRoot)
+ReactDOM.render(<LoadingPage />, appRoot)
 
 firebase.auth().onAuthStateChanged((user) => {
     if (!user) {
