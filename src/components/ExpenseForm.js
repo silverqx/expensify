@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 
 import moment from 'moment'
-// TODO check this along with import 'react-dates/lib/css/_datepicker.css' in App.js silver
-import 'react-dates/initialize'
 import { SingleDatePicker } from 'react-dates'
 import debounce from 'lodash.debounce'
 

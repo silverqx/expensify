@@ -15,6 +15,7 @@ import PublicRoute from '../routers/PublicRoute'
 
 // import { clearInputValue } from '../utils/utils'
 
+import 'react-dates/initialize'
 import 'react-dates/lib/css/_datepicker.css'
 
 // Make sure to bind modal to your appElement
