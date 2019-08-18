@@ -68,7 +68,7 @@ exports[`ExpenseList component should render ExpenseList with expenses 1`] = `
     <div
       className="list__content"
     >
-      <withRouter(Connect(ExpenseListItem))
+      <Connect(ExpenseListItem)
         amount={166.6}
         createdAt={1555624800000}
         description="Water Bill"
@@ -76,7 +76,7 @@ exports[`ExpenseList component should render ExpenseList with expenses 1`] = `
         key="1"
         note="Water Bill Note"
       />
-      <withRouter(Connect(ExpenseListItem))
+      <Connect(ExpenseListItem)
         amount={5.2}
         createdAt={1552777200000}
         description="Gas Bill"
@@ -84,7 +84,7 @@ exports[`ExpenseList component should render ExpenseList with expenses 1`] = `
         key="2"
         note="Gas Bill Note"
       />
-      <withRouter(Connect(ExpenseListItem))
+      <Connect(ExpenseListItem)
         amount={50.2}
         createdAt={1554760800000}
         description="Internet Bill"
@@ -92,7 +92,7 @@ exports[`ExpenseList component should render ExpenseList with expenses 1`] = `
         key="3"
         note="Internet Bill Note"
       />
-      <withRouter(Connect(ExpenseListItem))
+      <Connect(ExpenseListItem)
         amount={10.2}
         createdAt={1547074800000}
         description="Telekom Bill"

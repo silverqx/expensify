@@ -1,16 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import moment from 'moment'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import numeral from 'numeral'
 import 'numeral/locales/sk'
 
-import { startRemoveExpense } from '../actions/expenses'
-
 numeral.locale('sk')
 
-// TODO find out how to correctly pass history and expense silver
-export const ExpenseListItem = ({ dispatch, history, id, description, note, amount, createdAt}) => (
+export const ExpenseListItem = ({ id, description, amount, createdAt}) => (
     <Link to={`/edit/${id}`} className="list-item">
         <div>
             <h3 className="list-item__title">{description}</h3>
@@ -20,4 +17,4 @@ export const ExpenseListItem = ({ dispatch, history, id, description, note, amou
     </Link>
 )
 
-export default withRouter(connect()(ExpenseListItem))
+export default connect()(ExpenseListItem)
