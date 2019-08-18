@@ -1,4 +1,4 @@
-import getExpensesTotal from '../../selectors/expenses-total'
+import getExpensesTotal from '../../selectors/expensesTotal'
 import expenses from '../fixtures/expenses'
 
 describe('getExpensesTotal selector', () => {

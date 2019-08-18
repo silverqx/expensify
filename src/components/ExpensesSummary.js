@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import numeral from 'numeral'
 import 'numeral/locales/sk'
 
-import getExpensesTotal from '../selectors/expenses-total'
+import getExpensesTotal from '../selectors/expensesTotal'
 import getVisibleExpenses from '../selectors/expenses'
 
 export const ExpensesSummary = ({ expensesCount, expensesTotal}) => {

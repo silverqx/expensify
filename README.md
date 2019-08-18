@@ -32,7 +32,7 @@ For tests is used jest with enzyme.
     Run tests in watch mode.
 
     ```sh
-    npm run test -- --watch
+    npm test -- --watch
     ```
 1.  **Open the source code and start editing!**
 
