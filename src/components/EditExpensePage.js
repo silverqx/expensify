@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import ExpenseForm from './ExpenseForm'
 
 import { startEditExpense, startRemoveExpense } from '../actions/expenses'
+import findExpense from '../selectors/findExpense'
 
 export class EditExpensePage extends Component {
     onSubmit = (updatedExpense) => {
@@ -44,18 +45,6 @@ export class EditExpensePage extends Component {
             </div>
         )
     }
-}
-
-// FIXME really bad solution, should be done in router? And how to test this? silver
-const findExpense = (state, { history, match }) => {
-    const expense = state.expenses.find(
-        expense => expense.id === match.params.id
-    )
-
-    if (!expense)
-        return history.goBack()
-
-    return expense
 }
 
 const mapStateToProps = (state, props) => ({
