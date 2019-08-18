@@ -16,7 +16,7 @@ exports[`LoginPage component should render LoginPage correctly 1`] = `
       It's time to track your finances.
     </p>
     <button
-      className="button"
+      className="button button-primary"
     >
       Login with Google
     </button>
